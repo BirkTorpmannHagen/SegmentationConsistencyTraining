@@ -10,7 +10,7 @@ class Augmentations(nn.Module):
             alb.ColorJitter(brightness=0.2,
                             contrast=0.2,
                             saturation=0.2,
-                            hue=0.05, p=1),
+                            hue=0.2, p=1),
             alb.GaussNoise(var_limit=0.01, p=1),
             alb.ImageCompression(quality_lower=10,
                                  quality_upper=100,
