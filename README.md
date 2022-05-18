@@ -11,7 +11,6 @@ To install requirements:
 ```setup
 pip install -r requirements.txt
 ```
-WIP
 
 
 ## Training
@@ -40,4 +39,5 @@ This will evaluate the models given with IDs in the range [ID lower, ID ipper]
 WIP
 ## Results
 ![improvements](https://github.com/BirkTorpmannHagen/SegmentationConsistencyTraining/blob/master/consistency_training_percent.png)
+
 We demonstrate that Segmentation Inconsistency Training improves generaliation by a statistically significant margin (p>0.99) on all three tested out-of-distribution datasets.
