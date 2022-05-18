@@ -5,7 +5,7 @@ from segmentation_models import *
 import metrics
 from augmentation import *
 from torch.utils.data import DataLoader
-
+import sys
 
 class ModelEvaluator:
     def __init__(self):
@@ -21,7 +21,7 @@ class ModelEvaluator:
         self.models = [DeepLab, FPN, TriUnet, Unet]
         self.model_names = ["DeepLab", "FPN", "TriUnet", "Unet"]
 
-    def get_table_data(self, id_range):
+    def eval(self, id_range):
 
         for model_constructor, model_name in zip(self.models, self.model_names):
             for training_type in ["No_Augmentation", "Augmentation", "Consistency_Training"]:
@@ -47,4 +47,6 @@ class ModelEvaluator:
 
 if __name__ == '__main__':
     evaluator = ModelEvaluator()
-    evaluator.get_table_data(range(1,2))
+    id_lower = sys.argv[1]
+    id_higher = sys.argv[2]
+    evaluator.eval(range(id_lower, id_higher))

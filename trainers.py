@@ -1,13 +1,12 @@
-import matplotlib.pyplot as plt
 import numpy as np
 import torch.optim.optimizer
 from torch.utils.data import DataLoader
-from tqdm import tqdm
 from dataloaders import KvasirSegmentationDataset, KvasirWithAugments, EtisDataset
 from metrics import iou
 from consistency_losses import *
 from augmentation import Augmentations
 import segmentation_models
+
 class VanillaTrainer:
     def __init__(self, id, config):
         """
